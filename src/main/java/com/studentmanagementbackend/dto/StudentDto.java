@@ -1,18 +1,17 @@
-package com.studentmanagementbackend.entity;
+package com.studentmanagementbackend.dto;
 
-
-import jakarta.persistence.*;
+import com.studentmanagementbackend.entity.Course;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
 @Data
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@AllArgsConstructor
+@NoArgsConstructor
+public class StudentDto {
     private Long id;
-
     private String firstName;
     private String lastName;
     private String rollNo;
@@ -27,8 +26,5 @@ public class Student {
     private String state;
     private String country;
     private String pinCode;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id")
     private Course course;
 }
