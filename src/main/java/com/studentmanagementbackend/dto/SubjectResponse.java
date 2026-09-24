@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class SubjectDto {
+public class SubjectResponse {
     private Long id;
 
     private String subjectName;

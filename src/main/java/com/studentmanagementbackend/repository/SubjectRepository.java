@@ -1,6 +1,6 @@
 package com.studentmanagementbackend.repository;
 
-import com.studentmanagementbackend.dto.Subject;
+import com.studentmanagementbackend.entity.Subject;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

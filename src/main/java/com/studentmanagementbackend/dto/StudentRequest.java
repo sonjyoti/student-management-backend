@@ -1,17 +1,13 @@
 package com.studentmanagementbackend.dto;
 
-import com.studentmanagementbackend.entity.Course;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class StudentDto {
-    private Long id;
+@RequiredArgsConstructor
+public class StudentRequest {
     private String firstName;
     private String lastName;
     private String rollNo;
@@ -26,5 +22,5 @@ public class StudentDto {
     private String state;
     private String country;
     private String pinCode;
-    private Course course;
+    private Long courseId;
 }
