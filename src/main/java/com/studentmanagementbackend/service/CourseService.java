@@ -27,7 +27,7 @@ public class CourseService {
         Iterable<Course> courses = courseRepository.findAll();
         List<CourseResponse> courseResponses = new ArrayList<>();
         for (Course course : courses) {
-            CourseResponse courseResponse = globalMapper.courseMapperRes(course);
+            CourseResponse courseResponse = globalMapper.courseMapperResponse(course);
             courseResponses.add(courseResponse);
         }
         return courseResponses;
@@ -40,13 +40,13 @@ public class CourseService {
                         "Course not found with id: " + id
                 )
         );
-        return globalMapper.courseMapperRes(course);
+        return globalMapper.courseMapperResponse(course);
     }
 
     public CourseResponse addCourse(CourseRequest courseRequest){
-        Course course = globalMapper.courseMapperReq(courseRequest);
+        Course course = globalMapper.courseMapperRequest(courseRequest);
         Course newCourse = courseRepository.save(course);
-        return globalMapper.courseMapperRes(newCourse);
+        return globalMapper.courseMapperResponse(newCourse);
     }
 
     public void deleteCourse(Long id){
@@ -57,6 +57,6 @@ public class CourseService {
                 )
         );
         courseRepository.delete(course);
-        globalMapper.courseMapperRes(course);
+        globalMapper.courseMapperResponse(course);
     }
 }

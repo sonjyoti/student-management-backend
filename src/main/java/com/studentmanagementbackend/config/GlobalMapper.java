@@ -1,16 +1,14 @@
 package com.studentmanagementbackend.config;
 
-import com.studentmanagementbackend.dto.CourseRequest;
-import com.studentmanagementbackend.dto.CourseResponse;
-import com.studentmanagementbackend.dto.StudentResponse;
-import com.studentmanagementbackend.dto.StudentRequest;
+import com.studentmanagementbackend.dto.*;
 import com.studentmanagementbackend.entity.Course;
 import com.studentmanagementbackend.entity.Student;
+import com.studentmanagementbackend.entity.Subject;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GlobalMapper {
-    public StudentResponse studentMapperRes(Student student){
+    public StudentResponse studentMapperResponse(Student student){
         StudentResponse StudentResponse = new StudentResponse();
         StudentResponse.setId(student.getId());
         StudentResponse.setFirstName(student.getFirstName());
@@ -30,7 +28,7 @@ public class GlobalMapper {
         return StudentResponse;
     }
 
-    public Student studentMapperReq(StudentRequest studentRequest){
+    public Student studentMapperRequest(StudentRequest studentRequest){
         Student student = new Student();
         student.setFirstName(studentRequest.getFirstName());
         student.setLastName(studentRequest.getLastName());
@@ -47,7 +45,7 @@ public class GlobalMapper {
         return student;
     }
 
-    public CourseResponse courseMapperRes(Course course){
+    public CourseResponse courseMapperResponse(Course course){
         CourseResponse courseResponse = new CourseResponse();
         courseResponse.setId(course.getId());
         courseResponse.setCourseName(course.getCourseName());
@@ -56,11 +54,26 @@ public class GlobalMapper {
         return courseResponse;
     }
 
-    public Course courseMapperReq(CourseRequest courseRequest){
+    public Course courseMapperRequest(CourseRequest courseRequest){
         Course course = new Course();
         course.setCourseName(courseRequest.getCourseName());
         course.setCourseCode(courseRequest.getCourseCode());
         course.setCourseDuration(courseRequest.getCourseDuration());
         return course;
+    }
+
+    public SubjectResponse subjectMapperResponse(Subject subject){
+        SubjectResponse subjectResponse = new SubjectResponse();
+        subjectResponse.setId(subject.getId());
+        subjectResponse.setSubjectName(subject.getSubjectName());
+        subjectResponse.setSubjectCode(subject.getSubjectCode());
+        return subjectResponse;
+    }
+
+    public Subject subjectMapperRequest(SubjectRequest subjectRequest){
+        Subject subject = new Subject();
+        subject.setSubjectName(subjectRequest.getSubjectName());
+        subject.setSubjectCode(subjectRequest.getSubjectCode());
+        return subject;
     }
 }

@@ -16,11 +16,6 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/course/{courseId}")
-    public List<StudentResponse> getAllStudentsByCourse(@PathVariable Long courseId) {
-        return studentService.getAllStudentsByCourseId(courseId);
-    }
-
     @GetMapping("/{studentId}")
     public StudentResponse getStudentById(@PathVariable Long studentId) {
         return studentService.getStudentById(studentId);
@@ -29,6 +24,11 @@ public class StudentController {
     @GetMapping
     public List<StudentResponse> getAllStudents() {
         return studentService.getAllStudents();
+    }
+
+    @GetMapping("/course/{courseId}")
+    public List<StudentResponse> getAllStudentsByCourse(@PathVariable Long courseId) {
+        return studentService.getAllStudentsByCourseId(courseId);
     }
 
     @PostMapping

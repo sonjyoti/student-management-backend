@@ -3,8 +3,8 @@ package com.studentmanagementbackend.dto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 public class SubjectResponse {
     private Long id;
 
