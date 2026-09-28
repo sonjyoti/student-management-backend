@@ -1,12 +1,9 @@
 package com.studentmanagementbackend.dto;
 
-import com.studentmanagementbackend.entity.Course;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class SubjectResponse {
     private Long id;
@@ -16,5 +13,7 @@ public class SubjectResponse {
     private int semester;
     private int credit;
 
-    private Course course;
+    private Long courseId;
+    private String courseName;
+    private String courseCode;
 }

@@ -1,12 +1,12 @@
 package com.studentmanagementbackend.dto;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class StudentRequest {
     private String firstName;
     private String lastName;
