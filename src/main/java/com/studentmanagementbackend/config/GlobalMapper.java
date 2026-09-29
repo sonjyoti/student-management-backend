@@ -2,6 +2,7 @@ package com.studentmanagementbackend.config;
 
 import com.studentmanagementbackend.dto.*;
 import com.studentmanagementbackend.entity.Course;
+import com.studentmanagementbackend.entity.Marks;
 import com.studentmanagementbackend.entity.Student;
 import com.studentmanagementbackend.entity.Subject;
 import org.springframework.stereotype.Component;
@@ -75,5 +76,16 @@ public class GlobalMapper {
         subject.setSubjectName(subjectRequest.getSubjectName());
         subject.setSubjectCode(subjectRequest.getSubjectCode());
         return subject;
+    }
+
+    public MarksResponse marksMapperResponse(Marks marks){
+        MarksResponse marksResponse = new MarksResponse();
+        marksResponse.setMark(marks.getMark());
+        marksResponse.setStudentId(marks.getStudent().getId());
+        marksResponse.setStudentName(marks.getStudent().getFirstName() + " " + marks.getStudent().getLastName());
+        marksResponse.setSubjectId(marks.getSubject().getId());
+        marksResponse.setSubjectName(marks.getSubject().getSubjectName());
+        marksResponse.setCourseName(marks.getStudent().getCourse().getCourseName());
+        return marksResponse;
     }
 }
